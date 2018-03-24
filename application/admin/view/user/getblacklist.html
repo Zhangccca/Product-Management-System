@@ -1,0 +1,42 @@
+<div class="crumb-wrap">
+    <div class="crumb-list"><i class="icon-font"></i>
+        <a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/index/index">首页</a>
+        <span class="crumb-step">&gt;
+            </span><a class="crumb-name" href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/user/getuserlist">用户管理</a><span class="crumb-step">&gt;
+        </span><a class="crumb-name">用户黑名单</a>
+    </div>
+</div>
+<div class="crumb-wrap">
+    <div class="crumb-list">
+        <a class="crumb-list" href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/user/getuserlist"><i class="icon-font">&#xe008;</i>所有用户</a>
+        <a class="crumb-list" href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/user/getblacklist"><i class="icon-font">&#xe008;</i>用户黑名单</a>
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>序号</th>
+        <th>昵称</th>
+        <th>性别</th>
+        <th>城市</th>
+        <th>省份</th>
+        <th>备注</th>
+        <th>操作</th>
+    </tr>
+    {volist name="blacklist" id="vo"}
+    <tr>
+        <td>{$vo.id}</td>
+        <td>{$vo.nickname}</td>
+        {if $vo.sex eq 1}
+        <td>男</td>
+        {else/}
+        <td>女</td>
+        {/if}
+        <td>{$vo.city}</td>
+        <td>{$vo.province}</td>
+        <td>{$vo.note}</td>
+        <td>
+            <a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/user/unbatchblack/id/{$vo.id}">移出黑名单</a>
+        </td>
+    </tr>
+    {/volist}
+</table>

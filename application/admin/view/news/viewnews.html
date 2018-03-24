@@ -1,0 +1,119 @@
+
+<div class="crumb-wrap">
+    <div class="crumb-list"><i class="icon-font"></i>
+        <a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/index/index">首页</a>
+        <span class="crumb-step">&gt;
+            </span><a class="crumb-name" href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/material">素材管理</a><span class="crumb-step">&gt;
+            </span><span>创建图文消息</span></div>
+</div>
+<div class="result-wrap">
+    <div class="result-content">
+        <form action="" method="post" id="myform" name="myform" enctype="multipart/form-data">
+            <table class="insert-tab" width="100%">
+                <tbody>
+                <tr>
+                    <th><i class="require-red">*</i>标题：</th>
+                    <td>
+                        <input class="common-text required" id="title" name="title" size="50" value="" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <th><i class="require-red">*</i>价格：</th>
+                    <td>
+                        <input class="common-text required" id="abstract" name="abstract" size="50" value="" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <th><i class="require-red">*</i>正文：</th>
+                    <td>
+                        <textarea name="content" id="content" cols="90" rows="7"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th width="120"><i class="require-red">*</i>封面：</th>
+                    <td>
+                         <!--Button trigger modal-->
+                        <a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/photos"><input type="button" value="本地上传" /></a>
+                        <button type="button" data-toggle="modal" data-target=".bs-example-modal-lg">
+                            选择图片
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="ifr">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="result-wrap">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h2 class="modal-title" id="myModalLabel">选择图片</h2>
+                                        </div>
+                                        <br>
+                                        <div class="result-content" >
+                                            <form action="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/uploadimage" method="post" id="imyform" name="imyform" enctype="multipart/form-data">
+                                                <table  width="100%">
+                                                    <tr>
+                                                        <hr/>
+                                                    </tr>
+                                                    <!--</tbody>-->
+                                                </table>
+                                                <div style="width: 900px; height: 140px;">
+                                                    {volist name="image" id="vo" mod="4"}
+                                                    <div style="width:25%;height:100%;float:left;margin-bottom:50px;">
+                                                        <a href="javascript:choose('{$vo.media_id}','{$vo.image}');">
+                                                            <img src="http://zchi.wywwwxm.com/wx_tp/public/{$vo.image}" alt="" height="140px" width="140px" id="{$vo.media_id}" name="thumb">
+                                                        </a>
+                                                    </div>
+                                                    {eq name="mod" value="3"}{/eq}
+                                                    {/volist}
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button"  data-dismiss="modal">关闭</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="show-cover"></div>
+                        <input type="hidden" name="mediaid" id="media_id" value="">
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th></th>
+                    <td>
+                        <input  value="保存" type="button" onclick="save()" />
+                        <!--<input  value="保存并群发" type="button" onclick="savesent()" />-->
+                        <input  onclick="history.go(-1)" value="返回" type="button" />
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
+
+
+
+<script language="JavaScript" type="text/javascript">
+    function  save(){
+//        保存图文消息到数据库
+        document.all.myform.action="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/ntsave";
+        document.all.myform.submit();
+    }
+    function  savesent(){
+        document.all.myform.action="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/ntsavesent";
+        document.all.myform.submit();
+    }
+    function choose(media_id,img) {
+        //var value= $('.thumb').attr('id');
+        document.getElementById("media_id").value=img;
+        document.getElementById("show-cover").innerHTML = '<img height="140px" width="140px" src="http://zchi.wywwwxm.com/wx_tp/public//'+img+'">';
+    }
+
+
+
+</script>
+

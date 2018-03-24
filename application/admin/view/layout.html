@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>后台首页</title>
+
+    <!--&lt;!&ndash; Bootstrap &ndash;&gt;-->
+    <!--<link href="/static/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<link href="/static/css/common.css" rel="stylesheet">-->
+    <!--<link href="/static/css/main.css" rel="stylesheet">-->
+    <!--<link href="/static/css/admin_login.css" rel="stylesheet">-->
+
+    <!--&lt;!&ndash;[if lt IE 9]>-->
+    <!--<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>-->
+    <!--<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>-->
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <link href="http://zchi.wywwwxm.com/wx_tp/public/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://zchi.wywwwxm.com/wx_tp/public/static/css/common.css" rel="stylesheet">
+    <link href="http://zchi.wywwwxm.com/wx_tp/public/static/css/main.css" rel="stylesheet">
+    <link href="http://zchi.wywwwxm.com/wx_tp/public/static/css/admin_login.css" rel="stylesheet">
+
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="http://zchi.wywwwxm.com/wx_tp/public/static/js/libs/bootstrap.js"></script>
+
+    <!--<![endif]&ndash;&gt;-->
+</head>
+
+<body>
+<div class="topbar-wrap white">
+    <div class="topbar-inner clearfix">
+        <div class="topbar-logo-wrap clearfix">
+            <h1 class="topbar-logo none"><a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/index/index" class="navbar-brand">后台管理</a></h1>
+            <ul class="navbar-list clearfix">
+                <li><a class="on" href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/index/index">首页</a></li>
+                <li><a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/home/user/login" target="_blank">登陆</a></li>
+            </ul>
+        </div>
+        <div class="top-info-wrap">
+            <ul class="top-info-list clearfix">
+                <li><a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/home/user/logout">注销登录</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="sidebar-wrap">
+    <div class="sidebar-content" >
+        <ul class="sidebar-list">
+            <li>
+                <a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/index/docreate"><i class="icon-font">&#xe003;</i>菜单</a>
+                <ul class="sub-menu">
+                    <li><a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/index/createmine"><i class="icon-font">&#xe008;</i>自定义菜单</a></li>
+                </ul>
+            </li>
+            <!--<li>-->
+                <!--<a href="#"><i class="icon-font">&#xe003;</i>消息管理</a>-->
+                <!--<ul class="sub-menu">-->
+                    <!--<li><a href="#"><i class="icon-font">&#xe008;</i>所有消息</a></li>-->
+                    <!--<li><a href="#"><i class="icon-font">&#xe005;</i>未读消息</a></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <li>
+                <a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/material"><i class="icon-font">&#xe018;</i>素材管理</a>
+                <ul class="sub-menu">
+                    <li><a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/viewnews"><i class="icon-font">&#xe005;</i>创建图文消息</a>
+                    <li><a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/photos"><i class="icon-font">&#xe008;</i>图片</a></li>
+                    <li><a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/voices"><i class="icon-font">&#xe008;</i>音频</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/user/getuserlist"><i class="icon-font">&#xe018;</i>用户管理</a>
+                <ul class="sub-menu">
+                    <li><a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/user/getuserlist"><i class="icon-font">&#xe017;</i>所有用户</a></li>
+                    <li><a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/user/getblacklist"><i class="icon-font">&#xe037;</i>用户黑名单</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/oauth/show"><i class="icon-font">&#xe018;</i>联系我们</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--/sidebar-->
+<div class="main-wrap" style="margin-bottom: 20rem">
+    {__CONTENT__}
+</div>
+<!--/main-->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        &copy; 河北师范大学软件学院
+    </div>
+</nav>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+
+<!--/sidebar-->
+
+
+<div class="crumb-wrap">
+    <div class="crumb-list"><i class="icon-font"></i><a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/index/index">首页</a><span class="crumb-step">&gt;
+    </span><span class="crumb-name">消息管理</span></div>
+</div>
+
+<div class="result-wrap">
+    <form name="myform" id="myform" method="post">
+        <div class="result-title">
+            <div class="result-list">
+                <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a>
+            </div>
+        </div>
+        <div class="result-content">
+            <table class="result-tab" width="100%">
+                <tr>
+                    <th>用户名</th>
+                    <th>消息</th>
+                    <th>时间</th>
+                </tr>
+                {volist name="pages" id="vo"}
+                    <tr>
+                        <td><a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/responseMsg">{$vo.username}</a></td>
+                        <td>
+                            {$vo.news}
+                        </td>
+                        <td>
+                            {$vo.time}
+                        </td>
+                    </tr>
+                {/volist}
+            </table>
+            <!--显示分页码-->
+            <nav aria-label="Page navigation">{$pages->render()}</nav>
+        </div>
+    </form>
+</div>
+
+<!--/main-->

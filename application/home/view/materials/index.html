@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>后台首页</title>
+
+    <!--&lt;!&ndash; Bootstrap &ndash;&gt;-->
+    <!--<link href="/static/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<link href="/static/css/common.css" rel="stylesheet">-->
+    <!--<link href="/static/css/main.css" rel="stylesheet">-->
+    <!--<link href="/static/css/admin_login.css" rel="stylesheet">-->
+
+    <!--&lt;!&ndash;[if lt IE 9]>-->
+    <!--<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>-->
+    <!--<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>-->
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <link href="http://zchi.wywwwxm.com/wx_tp/public/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://zchi.wywwwxm.com/wx_tp/public/static/css/common.css" rel="stylesheet">
+    <link href="http://zchi.wywwwxm.com/wx_tp/public/static/css/main.css" rel="stylesheet">
+    <link href="http://zchi.wywwwxm.com/wx_tp/public/static/css/admin_login.css" rel="stylesheet">
+
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="http://zchi.wywwwxm.com/wx_tp/public/static/js/libs/bootstrap.js"></script>
+
+    <!--<![endif]&ndash;&gt;-->
+</head>
+<body>
+<div class="result-wrap">
+    <div class="result-content">
+        <i class="require-red">*</i>图文消息：<br><hr>
+            <table class="insert-tab" width="100%">
+                <tbody>
+                <tr>
+                    <th>序号</th>
+                    <th>标题</th>
+                    <th>价格</th>
+                    <th>内容</th>
+                    <th>图片</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
+
+                </tr>
+                {volist name="materials" id="vo"}
+                <tr>
+                    <th>{$vo.id}</th>
+                    <th><a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/home/materials/show/id/{$vo.id}">{$vo.title}</a></th>
+                    <th>{$vo.abstract}</th>
+                    <th>{$vo.content}</th>
+                    <th><img src="http://zchi.wywwwxm.com/wx_tp/public/{$vo.image}" alt="" width="120px" height="120px"></th>
+                    <th>{$vo.create_time}</th>
+                    <th><a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/home/materials/show/id/{$vo.id}">了解更多</a></th>
+                </tr>
+                {/volist}
+                </tbody>
+            </table>
+    </div>
+</div>
+</body>

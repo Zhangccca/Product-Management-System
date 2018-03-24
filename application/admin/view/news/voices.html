@@ -1,0 +1,35 @@
+<div class="crumb-wrap">
+    <div class="crumb-list"><i class="icon-font"></i>
+        <a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/index/index">首页</a>
+        <span class="crumb-step">&gt;
+            </span><a class="crumb-name" href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/material">素材管理</a><span class="crumb-step">&gt;
+            </span><span>音频</span></div>
+</div>
+<div class="result-wrap">
+    <div class="result-content" >
+        <form action="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/uploadvoice" method="post" id="myform" name="myform" enctype="multipart/form-data" style="height: 600px;">
+            <table  width="100%">
+                <tr>
+                    <input type="file" name="voices"><br>
+                    <input type="submit" name="submit" value="本地上传">
+                </tr>
+                <tr>
+                    <hr>
+                </tr>
+                <!--</tbody>-->
+            </table>
+            <div style="width: 900px; height: 140px;">
+                {volist name="voice" id="vo"}
+                <tr>
+                    <td>{$vo.voice}</td>
+                    <td>{$vo.create_time}</td>
+                    <td>
+                        <i class="icon-font">&#xe037;</i><a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/deletevoice/id/{$vo.id}">删除</a>
+                    </td>
+
+                </tr>
+                {/volist}
+            </div>
+        </form>
+    </div>
+</div>

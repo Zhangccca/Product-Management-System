@@ -1,0 +1,32 @@
+<div class="crumb-wrap">
+    <div class="crumb-list"><i class="icon-font"></i>
+        <a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/index/index">首页</a>
+        <span class="crumb-step">&gt;
+            </span><a class="crumb-name" href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/material">素材管理</a><span class="crumb-step">&gt;
+            </span><span>图片</span></div>
+</div>
+<div class="result-wrap">
+    <div class="result-content" >
+        <form action="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/uploadimage" method="post" id="myform" name="myform" enctype="multipart/form-data" style="height: 600px;">
+            <table  width="100%">
+                <tr>
+                    <input type="file" name="image" /> <br>
+                    <input type="submit" name="submit" value="本地上传">
+                </tr>
+                <tr>
+                    <hr>
+                </tr>
+                <!--</tbody>-->
+            </table>
+            <div style="width: 900px; height: 140px;">
+                {volist name="image" id="vo" mod="4"}
+                    <div style="width:25%;height:100%;float:left;margin-bottom:50px">
+                        <img src="http://zchi.wywwwxm.com/wx_tp/public/{$vo.image}" alt="" height="140px" width="140px">
+                        <i class="icon-font">&#xe037;</i><a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/deleteimg/id/{$vo.id}">删除</a>
+                    </div>
+                    {eq name="mod" value="3"}{/eq}
+                {/volist}
+            </div>
+        </form>
+    </div>
+</div>

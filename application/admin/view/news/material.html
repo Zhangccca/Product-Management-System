@@ -1,0 +1,47 @@
+<div class="crumb-wrap">
+    <div class="crumb-list"><i class="icon-font"></i>
+        <a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/index/index">首页</a>
+        <span class="crumb-step">&gt;
+            </span><a class="crumb-name" href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/material">素材管理</a><span class="crumb-step">&gt;
+        </span>
+    </div>
+</div>
+<div class="crumb-wrap">
+    <div class="crumb-list">
+        <a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/viewnews"><i class="icon-font">&#xe005;</i>创建图文消息</a>
+        <a class="crumb-list" href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/photos"><i class="icon-font">&#xe008;</i>图片</a>
+        <a class="crumb-list" href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/voices"><i class="icon-font">&#xe008;</i>语音</a>
+    </div>
+</div>
+
+<div class="result-wrap">
+    <div class="result-content">
+        <i class="require-red">*</i>图文消息：
+        <table class="insert-tab" width="100%">
+            <tbody>
+            <tr>
+                <th>序号</th>
+                <th>标题</th>
+                <th>价格</th>
+                <th>内容</th>
+                <th>图片</th>
+                <th>创建时间</th>
+                <th>操作</th>
+
+            </tr>
+            {volist name="materials" id="vo"}
+                <tr>
+                    <th>{$vo.id}</th>
+                    <th>{$vo.title}</th>
+                    <th>{$vo.abstract}</th>
+                    <th>{$vo.content}</th>
+                    <th><img src="http://zchi.wywwwxm.com/wx_tp/public/{$vo.image}" alt="" width="120px" height="120px"></th>
+                    <th>{$vo.create_time}</th>
+                    <th><a href="http://zchi.wywwwxm.com/wx_tp/public/index.php/admin/news/delete/id/{$vo.id}"><i class="icon-font">&#xe037;</i>删除</a></th>
+                </tr>
+            {/volist}
+            </tbody>
+        </table>
+        <nav aria-label="Page navigation">{$materials->render()}</nav>
+    </div>
+</div>
